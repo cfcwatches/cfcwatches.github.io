@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFC Watches – Premium Garmin Watch Faces</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #f2f2f2;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            border-bottom: 2px solid #00aaff; /* electric blue underline */
+        }
+
+        .header-logo {
+            width: 180px;
+            max-width: 60%;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .header-logo {
+                width: 140px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding-bottom: 90px; /* space for floating button */
+            }
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                #00aaff,
+                transparent
+            );
+            margin: 60px 0;
+            opacity: 0.8;
+            transform: scaleX(0.6);           /* start slightly smaller */
+            transform-origin: center;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+        .section-divider.active {
+            transform: scaleX(1);             /* expands gently on scroll */
+            opacity: 1;
+        }
+
+        .watch-section {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .watch-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-image {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 14px;
+            border: 1px solid #222;
+            background: #111;
+            margin-bottom: 25px;
+        }
+
+        .thumbnail-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            padding: 10px 0 25px 0;
+        }
+
+        .thumbnail-row img {
+            width: 100%;
+            height: 260px;          /* forces consistent height */
+            object-fit: cover;      /* crops cleanly without distortion */
+            border-radius: 10px;
+            background: #111;
+            border: 1px solid #222;
+            transition: 0.2s;
+        }
+
+        .thumbnail-row img:hover {
+            transform: scale(1.05);
+            border-color: #00aaff;
+        }
+        .screenshot-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            padding: 10px 0 25px 0;
+        }
+
+        .screenshot-row img {
+            width: 100%;
+            border-radius: 10px;
+            background: #111;
+            border: 1px solid #222;
+        }     
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            background: #222;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin-top: 15px;
+            font-size: 1.3rem;
+        }
+        /* Floating mobile CTA button */
+        .mobile-cta {
+            position: fixed;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00aaff;
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 14px rgba(0, 170, 255, 0.4);
+            z-index: 999;
+            display: none; /* hidden by default */
+        }
+
+        /* Only show on mobile */
+        @media (max-width: 700px) {
+            .mobile-cta {
+                display: block;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0.6;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <img class="header-logo" src="images/cfc_logo.png" alt="CFC Watches Logo">
+
+    <h1>CFC Watches</h1>
+    <p class="subtitle">Premium Analog Watch Faces for Garmin</p>
+</header>
+ 
+<section class="watch-section" id="crownline">
+    <h2>Crownline Analog</h2>
+
+    <!-- HERO BANNER -->
+    <img class="hero-image" src="images/HERO_garmin_iq_banner_crownline.png" alt="Crownline Hero Banner">
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/shot1-forest-pilot-fen8.png" alt="Crownline Screenshot 1">
+        <img src="images/shot2-gold-chunky-fr965_under150kb.png" alt="Crownline Screenshot 2">
+        <img src="images/shot3-optimized_clean_vivoactive6.png" alt="Crownline Screenshot 3">
+        <img src="images/shot4-analog-royal-approachS70_under150kb.png" alt="Crownline Screenshot 4">
+        <img src="images/shot5-artic-venu4_under150kb.png" alt="Crownline Screenshot 5">
+    </div>
+
+    <a class="btn" href="https://apps-developer.garmin.com/apps/6a2b9e3f-3c63-4b6c-aac0-d458a5e8e3f6">View on Connect IQ</a>
+</section>
+<a class="mobile-cta" href="https://apps-developer.garmin.com/apps/6a2b9e3f-3c63-4b6c-aac0-d458a5e8e3f6">
+    View Crownline on Connect IQ
+</a>
+
+<div class="section-divider"></div>
+
+<section class="watch-section" id="fivetone">
+    <h2>FiveTone</h2>
+
+    <!-- HERO BANNER -->
+    <img class="hero-image" src="images/HERO_garmin_iq_banner_fivetone.png" alt="FiveTone Hero Banner">
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/shot1-blue-fr965optimized.png" alt="FiveTone Screenshot 1">
+        <img src="images/shot2-green-fen8optimized.png" alt="FiveTone Screenshot 2">
+        <img src="images/shot3-red-fen8-compressed.jpg" alt="FiveTone Screenshot 3">
+        <img src="images/shot4-gold-venu4-compressed.jpg" alt="FiveTone Screenshot 4">
+        <img src="images/shot5-charcoal-descent3-compressed.jpg" alt="FiveTone Screenshot 5">
+    </div>
+
+    <a class="btn" href="https://apps-developer.garmin.com/apps/c2fc25b2-d73c-4e07-ad2f-94479b7c2649">View on Connect IQ</a>
+</section>
+
+<a class="mobile-cta" href="https://apps-developer.garmin.com/apps/c2fc25b2-d73c-4e07-ad2f-94479b7c2649">
+    View FiveTone on Connect IQ
+</a>
+
+
+<footer>
+    © 2026 CFC Watches — Designed by Colm
+</footer>
+
+<script>
+
+const footer = document.querySelector("footer");
+const ctas = document.querySelectorAll(".mobile-cta");
+
+document.addEventListener("scroll", () => {
+    const crownline = document.querySelector("#crownline");
+    const fivetone = document.querySelector("#fivetone");
+    const ctaButtons = document.querySelectorAll(".mobile-cta");
+    const dividers = document.querySelectorAll(".section-divider");
+    
+    const footerRect = footer.getBoundingClientRect();
+    const footerVisible = footerRect.top < window.innerHeight;
+
+    const crownlineCTA = ctaButtons[0];
+    const fivetoneCTA = ctaButtons[1];
+
+    const crownRect = crownline.getBoundingClientRect();
+    const fiveRect = fivetone.getBoundingClientRect();
+
+    // Show Crownline CTA when its section is in view
+    if (crownRect.top < window.innerHeight && crownRect.bottom > 0) {
+        crownlineCTA.style.display = "block";
+        fivetoneCTA.style.display = "none";
+    }
+    // Show FiveTone CTA when its section is in view
+    else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "block";
+    }
+    // Hide both if neither section is visible
+    else {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+    }
+
+    dividers.forEach(div => {
+        const rect = div.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+
+        if (inView) {
+            div.classList.add("active");
+        } else {
+            div.classList.remove("active");
+        }
+    });
+
+    ctas.forEach(cta => {
+        if (footerVisible) {
+            cta.style.opacity = "0";
+            cta.style.pointerEvents = "none";
+        } else {
+            cta.style.opacity = "1";
+            cta.style.pointerEvents = "auto";
+        }
+    });    
+});
+</script>
+
+</body>
+</html>
