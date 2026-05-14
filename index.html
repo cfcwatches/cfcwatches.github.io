@@ -248,6 +248,29 @@
 </a>
 
 
+<section class="watch-section" id="progressHalo">
+    <h2>Progress Halo</h2>
+
+    <!-- HERO BANNER -->
+    <img class="hero-image" src="images/HERO_garmin_iq_banner_progressHalo.png" alt="FiveTone Hero Banner">
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/shot1-progress-fr165.jpg" alt="Progress Halo fr 165">
+        <img src="images/shot2-progress-fen8.jpg" alt="Progress Halo Fenix 8">
+        <img src="images/shot3-progress-fr965.jpg" alt="Progress Halo fr 965">
+        <img src="images/shot4-progress-step-dist-vo2-descentMk3.jpg" alt="Progress Halo Descent Mk3">
+        <img src="images/shot5-progress-live-mywatch_update1.jpg" alt="Progress Halo fr 165">
+    </div>
+
+    <a class="btn" href="https://apps-developer.garmin.com/apps/c2fc25b2-d73c-4e07-ad2f-94479b7c2649">View on Connect IQ</a>
+</section>
+
+<a class="mobile-cta" href="https://apps.garmin.com/apps/04092986-c4d1-4653-94a1-fd509565ddb6">
+    View Progress Halo on Connect IQ
+</a>
+
+
 <footer>
     © 2026 CFC Watches — Designed by Colm
 </footer>
@@ -260,6 +283,7 @@ const ctas = document.querySelectorAll(".mobile-cta");
 document.addEventListener("scroll", () => {
     const crownline = document.querySelector("#crownline");
     const fivetone = document.querySelector("#fivetone");
+    const progressHalo = document.querySelector("#progressHalo");
     const ctaButtons = document.querySelectorAll(".mobile-cta");
     const dividers = document.querySelectorAll(".section-divider");
     
@@ -268,24 +292,35 @@ document.addEventListener("scroll", () => {
 
     const crownlineCTA = ctaButtons[0];
     const fivetoneCTA = ctaButtons[1];
+    const progressHaloCTA = ctaButtons[2];
 
     const crownRect = crownline.getBoundingClientRect();
     const fiveRect = fivetone.getBoundingClientRect();
+    const haloRect = progressHalo.getBoundingClientRect();
 
     // Show Crownline CTA when its section is in view
     if (crownRect.top < window.innerHeight && crownRect.bottom > 0) {
         crownlineCTA.style.display = "block";
+        progressHaloCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
     }
     // Show FiveTone CTA when its section is in view
     else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
         crownlineCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
         fivetoneCTA.style.display = "block";
+    }
+    // Show halo CTA when its section is in view
+    else if (haloRect.top < window.innerHeight && haloRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+        progressHaloCTA.style.display = "block";
     }
     // Hide both if neither section is visible
     else {
         crownlineCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
     }
 
     dividers.forEach(div => {
