@@ -308,6 +308,7 @@ const ctas = document.querySelectorAll(".mobile-cta");
 document.addEventListener("scroll", () => {
     const crownline = document.querySelector("#crownline");
     const fivetone = document.querySelector("#fivetone");
+    const haloGlow = document.querySelector("#haloglow");
     const progressHalo = document.querySelector("#progressHalo");
     const ctaButtons = document.querySelectorAll(".mobile-cta");
     const dividers = document.querySelectorAll(".section-divider");
@@ -317,35 +318,47 @@ document.addEventListener("scroll", () => {
 
     const crownlineCTA = ctaButtons[0];
     const fivetoneCTA = ctaButtons[1];
-    const progressHaloCTA = ctaButtons[2];
+    const haloGlowCTA = ctaButtons[2];
+    const progressHaloCTA = ctaButtons[3];
 
     const crownRect = crownline.getBoundingClientRect();
     const fiveRect = fivetone.getBoundingClientRect();
-    const haloRect = progressHalo.getBoundingClientRect();
+    const haloGlowRect = haloGlow.getBoundingClientRect();
+    const progressHaloRect = progressHalo.getBoundingClientRect();
 
     // Show Crownline CTA when its section is in view
     if (crownRect.top < window.innerHeight && crownRect.bottom > 0) {
         crownlineCTA.style.display = "block";
         progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
     }
     // Show FiveTone CTA when its section is in view
     else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
         crownlineCTA.style.display = "none";
         progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "none";
         fivetoneCTA.style.display = "block";
     }
     // Show halo CTA when its section is in view
-    else if (haloRect.top < window.innerHeight && haloRect.bottom > 0) {
+    else if (haloGlowRect.top < window.innerHeight && haloGlowRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "block";
+    }
+    else if (progressHaloRect.top < window.innerHeight && progressHaloRect.bottom > 0) {
         crownlineCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
         progressHaloCTA.style.display = "block";
+        haloGlowCTA.style.display = "none";
     }
     // Hide both if neither section is visible
     else {
         crownlineCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
         progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "none";
     }
 
     dividers.forEach(div => {
