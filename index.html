@@ -215,6 +215,8 @@
         <img src="images/shot3-optimized_clean_vivoactive6.png" alt="Crownline Screenshot 3">
         <img src="images/shot4-analog-royal-approachS70_under150kb.png" alt="Crownline Screenshot 4">
         <img src="images/shot5-artic-venu4_under150kb.png" alt="Crownline Screenshot 5">
+        <img src="images/analog-royal-fen8.png" alt="Crownline Screenshot 6">
+        
     </div>
 
     <a class="btn" href="https://apps-developer.garmin.com/apps/6a2b9e3f-3c63-4b6c-aac0-d458a5e8e3f6">View on Connect IQ</a>
@@ -238,6 +240,7 @@
         <img src="images/shot3-red-fen8-compressed.jpg" alt="FiveTone Screenshot 3">
         <img src="images/shot4-gold-venu4-compressed.jpg" alt="FiveTone Screenshot 4">
         <img src="images/shot5-charcoal-descent3-compressed.jpg" alt="FiveTone Screenshot 5">
+        <img src="images/FiveTone_Green_Forerunner265.png" alt="FiveTone Screenshot 6">
     </div>
 
     <a class="btn" href="https://apps-developer.garmin.com/apps/c2fc25b2-d73c-4e07-ad2f-94479b7c2649">View on Connect IQ</a>
@@ -261,6 +264,7 @@
         <img src="images/shot1-cyberpunk-fen8.png" alt="Halo Glow Cyberpunk fenix 8 screenshot">
         <img src="images/shot2-gold-fr965.png" alt="Halo Glow Gold fr965 screenshot">
         <img src="images/shot3-live-purple-fr165.jpg" alt="Halo Glow fr165 screenshot">
+        <img src="images/shot4-sunset-fen8.png" alt="Halo Glow screenshot 4">
         <img src="images/shot5-steel-fr965.jpg" alt="Halo Glow Steel fr965 screenshot">
     </div>
 
@@ -269,6 +273,31 @@
 
 <a class="mobile-cta" href="https://apps.garmin.com/apps/bf36b620-223d-4b27-ab3f-6d4fa3519d92">
     View Halo Glow on Connect IQ
+</a>
+
+<div class="section-divider"></div>
+
+<section class="watch-section" id="flipDeck">
+    <h2>FlipDeck</h2>
+
+    <!-- HERO BANNER -->
+    <img class="hero-image" src="images/flipdeck_hero_refined_final.png" alt="FlipDeck Hero Banner">
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/shot1-flip-red-fen8_compressed.png" alt="FlipDeck Fenix 8">
+        <img src="images/shot2-flip-radioyellow-fr965.png" alt="FlipDeck on Fr965">
+        <img src="images/shot3_FlipDeck_Purple_Final_Tiny.jpg" alt="FlipDeck purple">
+        <img src="images/shot4-red-myfr165_compressed.jpg" alt="FlipDeck on my Fr165">
+        <img src="images/shot5-flip-venom-purple-venu4.png" alt="FlipDeck on Venu4 ">
+        <img src="images/shot6-flip-deep-abyass-970.png" alt="FlipDeck on fr970 ">
+    </div>
+
+    <a class="btn" href="https://apps.garmin.com/apps/464f6294-d4a2-4569-a95f-28a1351c6851">View on Connect IQ</a>
+</section>
+
+<a class="mobile-cta" href="https://apps.garmin.com/apps/464f6294-d4a2-4569-a95f-28a1351c6851">
+    View FlipDeck on Connect IQ
 </a>
 
 <div class="section-divider"></div>
@@ -286,6 +315,8 @@
         <img src="images/shot3-progress-fr965.jpg" alt="Progress Halo fr 965">
         <img src="images/shot4-progress-step-dist-vo2-descentMk3.jpg" alt="Progress Halo Descent Mk3">
         <img src="images/shot5-progress-live-mywatch_update1.jpg" alt="Progress Halo fr 165">
+        <img src="images/shot6-progress-live-fr165.jpeg" alt="Progress Halo fr 165">
+        
     </div>
 
     <a class="btn" href="https://apps.garmin.com/apps/04092986-c4d1-4653-94a1-fd509565ddb6">View on Connect IQ</a>
@@ -310,6 +341,7 @@ document.addEventListener("scroll", () => {
     const fivetone = document.querySelector("#fivetone");
     const haloGlow = document.querySelector("#haloglow");
     const progressHalo = document.querySelector("#progressHalo");
+    const flipDeck =  document.querySelector("#flipDeck");
     const ctaButtons = document.querySelectorAll(".mobile-cta");
     const dividers = document.querySelectorAll(".section-divider");
     
@@ -319,11 +351,13 @@ document.addEventListener("scroll", () => {
     const crownlineCTA = ctaButtons[0];
     const fivetoneCTA = ctaButtons[1];
     const haloGlowCTA = ctaButtons[2];
-    const progressHaloCTA = ctaButtons[3];
+    const flipDeckCTA = ctaButtons[3];
+    const progressHaloCTA = ctaButtons[4];
 
     const crownRect = crownline.getBoundingClientRect();
     const fiveRect = fivetone.getBoundingClientRect();
     const haloGlowRect = haloGlow.getBoundingClientRect();
+    const flipDeckRect = flipDeck.getBoundingClientRect();
     const progressHaloRect = progressHalo.getBoundingClientRect();
 
     // Show Crownline CTA when its section is in view
@@ -332,6 +366,7 @@ document.addEventListener("scroll", () => {
         progressHaloCTA.style.display = "none";
         haloGlowCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
     }
     // Show FiveTone CTA when its section is in view
     else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
@@ -339,19 +374,29 @@ document.addEventListener("scroll", () => {
         progressHaloCTA.style.display = "none";
         haloGlowCTA.style.display = "none";
         fivetoneCTA.style.display = "block";
+        flipDeckCTA.style.display = "none";
     }
     // Show halo CTA when its section is in view
     else if (haloGlowRect.top < window.innerHeight && haloGlowRect.bottom > 0) {
         crownlineCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
         progressHaloCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
         haloGlowCTA.style.display = "block";
     }
+    else if (flipDeckRect.top < window.innerHeight && flipDeckRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+        flipDeckCTA.style.display = "block";
+        haloGlowCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
+    }    
     else if (progressHaloRect.top < window.innerHeight && progressHaloRect.bottom > 0) {
         crownlineCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
         progressHaloCTA.style.display = "block";
         haloGlowCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
     }
     // Hide both if neither section is visible
     else {
@@ -359,6 +404,7 @@ document.addEventListener("scroll", () => {
         fivetoneCTA.style.display = "none";
         progressHaloCTA.style.display = "none";
         haloGlowCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
     }
 
     dividers.forEach(div => {
