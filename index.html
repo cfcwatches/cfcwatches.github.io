@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CFC Watches – Premium Garmin Watch Faces</title>
     <style>
+        :root {
+            --font-main: Arial, sans-serif;
+            --font-size-xl: 2.8rem;
+            --font-size-lg: 2.2rem;
+            --font-size-md: 1.2rem;
+            --font-size-sm: 1rem;
+
+            --accent: #00aaff;
+            --bg-dark: #0d0d0d;
+            --bg-card: #1a1a1a;
+            --text-light: #f2f2f2;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -12,10 +25,10 @@
             color: #f2f2f2;
             line-height: 1.6;
         }
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
+        h1 { font-size: var(--font-size-xl); }
+        .watch-section h2 { font-size: var(--font-size-lg); }
+        .subtitle { font-size: var(--font-size-md); }
+
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.8;
@@ -68,9 +81,19 @@
 
         .watch-section {
             max-width: 1100px;
-            margin: 80px auto;
-            padding: 20px;
-            text-align: center;
+            margin: 100px auto;
+            padding: 20px 20px 40px 20px;
+            background: #111;
+            border-radius: 16px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.4);
+        }
+
+
+        .watch-summary {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+            opacity: 0.85;
         }
 
         .watch-section h2 {
@@ -78,15 +101,25 @@
             margin-bottom: 25px;
         }
 
-        .hero-image {
-            width: 100%;
-            max-width: none;
-            border-radius: 0;
-            border: none;
-            display: block;
-            margin: 0 0 30px 0;
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.15);
-        }
+.hero-wrapper {
+    width: 100%;
+    max-height: 360px;     /* consistent visual height */
+    overflow: hidden;      /* prevents layout jump */
+    display: flex;
+    justify-content: center;
+    background: #0d0d0d;   /* blends with site */
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;   /* shows full banner */
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0, 170, 255, 0.15);
+}
+
+
+
 
 
         .thumbnail-row {
@@ -108,8 +141,37 @@
 
         .thumbnail-row img:hover {
             transform: scale(1.05);
-            border-color: #00aaff;
+            border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(0,170,255,0.4);
         }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: left;
+        }
+
+        .feature-grid h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        .feature-grid ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            opacity: 0.85;
+        }
+
+        .feature-grid li {
+            margin-bottom: 6px;
+        }
+
+
         .screenshot-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -150,6 +212,18 @@
             margin-top: 15px;
             font-size: 1.3rem;
         }
+
+        .badge-new {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
         /* Floating mobile CTA button */
         .mobile-cta {
             position: fixed;
@@ -185,10 +259,97 @@
             border-radius: 6px;
             font-weight: bold;
         }
+
         footer {
             text-align: center;
             padding: 40px 20px;
+            opacity: 0.75;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-sub {
             opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: #0d0d0d;
+            padding: 12px 20px;
+            border-bottom: 1px solid #222;
+            z-index: 999;
+            text-align: center;
+        }
+
+        nav a {
+            color: #f2f2f2;
+            margin: 0 12px;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .about-section {
+            max-width: 900px;
+            margin: 80px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: 80px auto;
+            text-align: center;
+            opacity: 0.85;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: #0d0d0d;
+            padding: 12px 20px;
+            border-bottom: 1px solid #222;
+            text-align: center;
+        }
+
+        .top-nav a {
+            color: #f2f2f2;
+            margin: 0 14px;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.75;
+            transition: 0.2s ease;
+        }
+
+        .top-nav a:hover {
+            opacity: 1;
+            color: #00aaff;
         }
         
     </style>
@@ -196,26 +357,167 @@
 <body>
 
 <header>
+    <nav class="top-nav">
+        <a href="#quadrantPrime">Quadrant Prime</a>
+        <a href="#crownline">Crownline</a>
+        <a href="#fivetone">FiveTone</a>
+        <a href="#haloglow">Halo Glow</a>
+        <a href="#flipDeck">FlipDeck</a>
+        <a href="#progressHalo">Progress Halo</a>
+    </nav>
+
     <img class="header-logo" src="images/cfc_logo.png" alt="CFC Watches Logo">
 
     <h1>CFC Watches</h1>
-    <p class="subtitle">Premium Analog Watch Faces for Garmin</p>
+    <p class="subtitle">Precision Geometry. Premium Design. Built for Garmin®</p>
 </header>
  
+<section class="watch-section" id="quadrantPrime">
+    <h2>Quadrant Prime</h2>
+
+    <span class="badge-new">New Release</span>
+
+    <p class="watch-summary">
+        Quadrant Prime is a hybrid analog–digital watch face with four data quadrants, sunrise/sunset awareness,
+        and consistent geometry across Garmin AMOLED and MIP devices. All customization is available on‑device
+        through the long‑press menu.
+    </p>
+
+    <!-- HERO BANNER (wrapper prevents cropping) -->
+    <div class="hero-wrapper">
+        <img class="hero-image" src="images/qp/hero_image_1440x720.jpg" alt="Quadrant Prime Hero Banner">
+    </div>
+
+    <!-- FEATURE GRID -->
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Hybrid analog + digital time</li>
+                <li>Four data quadrants</li>
+                <li>Sunrise and sunset awareness</li>
+                <li>Weather and temperature</li>
+                <li>Date: weekday, day, month</li>
+                <li>Battery percentage</li>
+                <li>Theme‑matched grid overlay</li>
+                <li>Optimised geometry across supported devices</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Themes</h3>
+            <ul>
+                <li>Cream Sandstone</li>
+                <li>Steel Red</li>
+                <li>Canary Yellow</li>
+                <li>Creamy Blue</li>
+                <li>Electric Blue</li>
+                <li>Mint Breeze</li>
+                <li>Purple Night</li>
+                <li>Burnt Orange</li>
+            </ul>
+        </div>
+        <div>
+            <h3>On‑Device Settings</h3>
+            <ul>
+                <li>Theme selection</li>
+                <li>Show/hide sunrise/sunset</li>
+                <li>Toggle weather and date</li>
+                <li>Minimal mode (hide hands)</li>
+                <li>Toggle seconds hand</li>
+                <li>Choose 3 custom stats</li>
+                <li>Hide individual stats</li>
+                <li>12‑hour / 24‑hour</li>
+                <li>Automatic layout scaling</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/qp/shot1-quad-orange-pilot-descentMk3_compressed.jpg" loading="lazy" alt="Quadrant Prime Cream Sandstone on Forerunner 965">
+        <img src="images/qp/shot2-quad-redsteel-solid-fr970_compressed.jpg" loading="lazy" alt="Quadrant Prime Steel Red on Fenix 8">
+        <img src="images/qp/shot3-compressed_screenshot.jpg" loading="lazy" alt="Quadrant Prime Canary Yellow on Venu 4">
+        <img src="images/qp/shot4-quad-sanstone-solid-epix-proGen2.jpg" loading="lazy" alt="Quadrant Prime Electric Blue on Epix">
+        <img src="images/qp/shot5-quad-yellow-transparent-fr965.png" loading="lazy" alt="Quadrant Prime Mint Breeze on Forerunner 165">
+        <img src="images/qp/shot6-quad-sansstone-fen8.png" loading="lazy" alt="Quadrant Prime Purple Night on Descent Mk3">
+    </div>
+
+    <a class="btn" href="https://apps.garmin.com/apps/bf6a587a-4b36-4710-b3c1-639b9ab9c345">
+        View Quadrant Prime on Connect IQ
+    </a>
+</section>
+<a class="mobile-cta" href="https://apps.garmin.com/apps/bf6a587a-4b36-4710-b3c1-639b9ab9c345">
+    View Quadrant Prime on Connect IQ
+</a>
+
+
+
+<div class="section-divider"></div>
+
 <section class="watch-section" id="crownline">
     <h2>Crownline Analog</h2>
+
+    <p class="watch-summary">
+        Crownline Analog is a modern analog watch face built around precision geometry, handcrafted numerals,
+        multiple bezel styles, and premium hand options. It blends clean analog aesthetics with practical
+        complications, delivering crisp, center‑aligned rendering across all supported Garmin devices.
+    </p>
+
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Ultra‑clean analog layout with handcrafted numerals</li>
+                <li>Multiple bezel styles: Classic, Diver, Dress, Railroad, Chronograph</li>
+                <li>Premium hand styles: Baton, Sword, Dauphine, Skeleton, Mercedes, Pilot</li>
+                <li>Customizable fields at 12 / 6 / 9 o’clock</li>
+                <li>Dual‑date display options</li>
+                <li>Adjustable progress dial width</li>
+                <li>Nine curated colour themes</li>
+                <li>Battery‑friendly rendering</li>
+                <li>Optimised for FR165, FR265, FR955, FR965, Venu, and more</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Themes</h3>
+            <ul>
+                <li>Midnight</li>
+                <li>Carbon</li>
+                <li>Royal</li>
+                <li>Arctic</li>
+                <li>Bronze</li>
+                <li>Gold</li>
+                <li>Additional curated palettes</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Garmin IQ Settings</h3>
+            <ul>
+                <li>Theme selection</li>
+                <li>Bezel style</li>
+                <li>Hand style</li>
+                <li>Custom complications (12 / 6 / 9)</li>
+                <li>Dual‑date toggle</li>
+                <li>Progress dial width</li>
+                <li>12‑hour / 24‑hour</li>
+            </ul>
+        </div>
+    </div>
+
 
     <!-- HERO BANNER -->
     <img class="hero-image" src="images/HERO_garmin_iq_banner_crownline.png" alt="Crownline Hero Banner">
 
     <!-- THUMBNAILS -->
     <div class="thumbnail-row">
-        <img src="images/shot1-forest-pilot-fen8.png" alt="Crownline Screenshot 1">
-        <img src="images/shot2-gold-chunky-fr965_under150kb.png" alt="Crownline Screenshot 2">
-        <img src="images/shot3-optimized_clean_vivoactive6.png" alt="Crownline Screenshot 3">
-        <img src="images/shot4-analog-royal-approachS70_under150kb.png" alt="Crownline Screenshot 4">
-        <img src="images/shot5-artic-venu4_under150kb.png" alt="Crownline Screenshot 5">
-        <img src="images/analog-royal-fen8.png" alt="Crownline Screenshot 6">
+        <img src="images/shot1-forest-pilot-fen8.png" loading="lazy" alt="Crownline Screenshot 1">
+        <img src="images/shot2-gold-chunky-fr965_under150kb.png" loading="lazy" alt="Crownline Screenshot 2">
+        <img src="images/shot3-optimized_clean_vivoactive6.png" loading="lazy" alt="Crownline Screenshot 3">
+        <img src="images/shot4-analog-royal-approachS70_under150kb.png" loading="lazy" alt="Crownline Screenshot 4">
+        <img src="images/shot5-artic-venu4_under150kb.png" loading="lazy" alt="Crownline Screenshot 5">
+        <img src="images/analog-royal-fen8.png" loading="lazy" alt="Crownline Screenshot 6">
         
     </div>
 
@@ -230,17 +532,58 @@
 <section class="watch-section" id="fivetone">
     <h2>FiveTone</h2>
 
+    <p class="watch-summary">
+        FiveTone is a clean digital watch face built around a large, high‑visibility time display and five bold
+        colour themes. Time and date are presented clearly on the left, with configurable daily metrics on the
+        right for quick‑glance readability across all supported Garmin devices.
+    </p>
+
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Large, easy‑to‑read digital time</li>
+                <li>Clear left‑aligned time and date</li>
+                <li>Configurable right‑side data fields</li>
+                <li>Weather + temperature</li>
+                <li>Smooth performance on AMOLED and MIP devices</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Themes</h3>
+            <ul>
+                <li>Gold</li>
+                <li>Blue</li>
+                <li>Red</li>
+                <li>Green</li>
+                <li>Charcoal</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Garmin IQ Settings</h3>
+            <ul>
+                <li>Theme selection</li>
+                <li>Choose right‑side data fields</li>
+                <li>Hide individual fields</li>
+                <li>12‑hour / 24‑hour</li>
+            </ul>
+        </div>
+    </div>
+
+
     <!-- HERO BANNER -->
     <img class="hero-image" src="images/HERO_garmin_iq_banner_fivetone.png" alt="FiveTone Hero Banner">
 
     <!-- THUMBNAILS -->
     <div class="thumbnail-row">
-        <img src="images/shot1-blue-fr965optimized.png" alt="FiveTone Screenshot 1">
-        <img src="images/shot2-green-fen8optimized.png" alt="FiveTone Screenshot 2">
-        <img src="images/shot3-red-fen8-compressed.jpg" alt="FiveTone Screenshot 3">
-        <img src="images/shot4-gold-venu4-compressed.jpg" alt="FiveTone Screenshot 4">
-        <img src="images/shot5-charcoal-descent3-compressed.jpg" alt="FiveTone Screenshot 5">
-        <img src="images/FiveTone_Green_Forerunner265.png" alt="FiveTone Screenshot 6">
+        <img src="images/shot1-blue-fr965optimized.png" loading="lazy" alt="FiveTone Screenshot 1">
+        <img src="images/shot2-green-fen8optimized.png" loading="lazy" alt="FiveTone Screenshot 2">
+        <img src="images/shot3-red-fen8-compressed.jpg" loading="lazy" alt="FiveTone Screenshot 3">
+        <img src="images/shot4-gold-venu4-compressed.jpg" loading="lazy" alt="FiveTone Screenshot 4">
+        <img src="images/shot5-charcoal-descent3-compressed.jpg" loading="lazy" alt="FiveTone Screenshot 5">
+        <img src="images/FiveTone_Green_Forerunner265.png" loading="lazy" alt="FiveTone Screenshot 6">
     </div>
 
     <a class="btn" href="https://apps-developer.garmin.com/apps/c2fc25b2-d73c-4e07-ad2f-94479b7c2649">View on Connect IQ</a>
@@ -255,17 +598,64 @@
 <section class="watch-section" id="haloglow">
     <h2>Halo Glow</h2>
 
+    <p class="watch-summary">
+        Halo Glow is a bold digital watch face featuring a bright central glow, clean layout, and ten vibrant
+        colour themes. With eight configurable data slots and full on‑device customization, Halo Glow offers
+        both high‑impact visuals and practical daily metrics.
+    </p>
+
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Bright central glow</li>
+                <li>High‑contrast digital layout</li>
+                <li>Eight configurable data fields</li>
+                <li>Weather, battery, HR, steps, body battery, VO2 Max, stress, recovery</li>
+                <li>Smooth performance across AMOLED and MIP devices</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Themes</h3>
+            <ul>
+                <li>Neon Purple</li>
+                <li>Blue Ocean</li>
+                <li>Arctic</li>
+                <li>Lava Red</li>
+                <li>Sunset</li>
+                <li>Gold</li>
+                <li>Teal</li>
+                <li>Cyberpunk</li>
+                <li>Deep Space</li>
+                <li>Steel</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Garmin IQ Settings</h3>
+            <ul>
+                <li>Theme selection</li>
+                <li>Configure all 8 data fields</li>
+                <li>Hide individual fields</li>
+                <li>Minimal mode (hide all fields)</li>
+                <li>12‑hour / 24‑hour</li>
+            </ul>
+        </div>
+    </div>
+
+
     <!-- HERO BANNER -->
     <img class="hero-image" src="images/hero_halo_glow_hero_final_compressed.jpg" alt="Halo Glow Hero Banner">
 
     <!-- THUMBNAILS -->
     <div class="thumbnail-row">
-        <img src="images/shot1-purple-fen8.jpg" alt="Halo Glow purple fenix 8 screenshot">
-        <img src="images/shot1-cyberpunk-fen8.png" alt="Halo Glow Cyberpunk fenix 8 screenshot">
-        <img src="images/shot2-gold-fr965.png" alt="Halo Glow Gold fr965 screenshot">
-        <img src="images/shot3-live-purple-fr165.jpg" alt="Halo Glow fr165 screenshot">
-        <img src="images/shot4-sunset-fen8.png" alt="Halo Glow screenshot 4">
-        <img src="images/shot5-steel-fr965.jpg" alt="Halo Glow Steel fr965 screenshot">
+        <img src="images/shot1-purple-fen8.jpg" loading="lazy" alt="Halo Glow purple fenix 8 screenshot">
+        <img src="images/shot1-cyberpunk-fen8.png" loading="lazy" alt="Halo Glow Cyberpunk fenix 8 screenshot">
+        <img src="images/shot2-gold-fr965.png" loading="lazy" alt="Halo Glow Gold fr965 screenshot">
+        <img src="images/shot3-live-purple-fr165.jpg" loading="lazy" alt="Halo Glow fr165 screenshot">
+        <img src="images/shot4-sunset-fen8.png" loading="lazy" alt="Halo Glow screenshot 4">
+        <img src="images/shot5-steel-fr965.jpg" loading="lazy" alt="Halo Glow Steel fr965 screenshot">
     </div>
 
     <a class="btn" href="https://apps.garmin.com/apps/bf36b620-223d-4b27-ab3f-6d4fa3519d92">View on Connect IQ</a>
@@ -280,17 +670,65 @@
 <section class="watch-section" id="flipDeck">
     <h2>FlipDeck</h2>
 
+
+    <p class="watch-summary">
+    FlipDeck is a modern flip‑clock watch face built around bold digital cards, clean geometry, and a fully
+    customizable layout. It blends classic flip‑clock styling with contemporary clarity, offering multiple
+    themes and optional personal messages above the time cards.
+    </p>
+
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Bold flip‑clock digital cards</li>
+                <li>Clean, geometric layout</li>
+                <li>Optional personal message above time</li>
+                <li>Four configurable stat fields</li>
+                <li>Smooth performance across supported devices</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Themes</h3>
+            <ul>
+                <li>Core Red</li>
+                <li>Core Blue</li>
+                <li>Core Green</li>
+                <li>Core Charcoal</li>
+                <li>Core Gold</li>
+                <li>Violet Venom</li>
+                <li>Toxic Orange</li>
+                <li>Radioactive Yellow</li>
+                <li>Deep Abyss</li>
+                <li>Blood Ember</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>On‑Device Settings</h3>
+            <ul>
+                <li>Theme selection</li>
+                <li>Custom message / quote</li>
+                <li>Configure all 4 stat fields</li>
+                <li>Hide fields for minimal layout</li>
+                <li>12‑hour / 24‑hour</li>
+            </ul>
+        </div>
+    </div>
+
+
     <!-- HERO BANNER -->
     <img class="hero-image" src="images/flipdeck_hero_refined_final.png" alt="FlipDeck Hero Banner">
 
     <!-- THUMBNAILS -->
     <div class="thumbnail-row">
-        <img src="images/shot1-flip-red-fen8_compressed.png" alt="FlipDeck Fenix 8">
-        <img src="images/shot2-flip-radioyellow-fr965.png" alt="FlipDeck on Fr965">
-        <img src="images/shot3_FlipDeck_Purple_Final_Tiny.jpg" alt="FlipDeck purple">
-        <img src="images/shot4-red-myfr165_compressed.jpg" alt="FlipDeck on my Fr165">
-        <img src="images/shot5-flip-venom-purple-venu4.png" alt="FlipDeck on Venu4 ">
-        <img src="images/shot6-flip-deep-abyass-970.png" alt="FlipDeck on fr970 ">
+        <img src="images/shot1-flip-red-fen8_compressed.png" loading="lazy" alt="FlipDeck Fenix 8">
+        <img src="images/shot2-flip-radioyellow-fr965.png" loading="lazy" alt="FlipDeck on Fr965">
+        <img src="images/shot3_FlipDeck_Purple_Final_Tiny.jpg" loading="lazy" alt="FlipDeck purple">
+        <img src="images/shot4-red-myfr165_compressed.jpg" loading="lazy" alt="FlipDeck on my Fr165">
+        <img src="images/shot5-flip-venom-purple-venu4.png" loading="lazy" alt="FlipDeck on Venu4 ">
+        <img src="images/shot6-flip-deep-abyass-970.png" loading="lazy" alt="FlipDeck on fr970 ">
     </div>
 
     <a class="btn" href="https://apps.garmin.com/apps/464f6294-d4a2-4569-a95f-28a1351c6851">View on Connect IQ</a>
@@ -305,17 +743,58 @@
 <section class="watch-section" id="progressHalo">
     <h2>Progress Halo</h2>
 
+    <p class="watch-summary">
+    Progress Halo is a modern digital watch face built around three customizable progress rings, giving you
+    a clear snapshot of your daily activity at a glance. Each ring can display your chosen metric with custom
+    colours and goal overrides, paired with weather, battery, heart rate, and step data in a balanced layout.
+    </p>
+
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Triple customizable progress rings</li>
+                <li>Full ring colour control</li>
+                <li>Custom goal overrides</li>
+                <li>Weather + temperature</li>
+                <li>Heart rate, battery, daily totals</li>
+                <li>Clean AM/PM time block</li>
+                <li>Optimised for FR165, Venu, Epix, Fenix, and more</li>
+                <li>Lightweight and efficient</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Themes</h3>
+            <ul>
+                <li>User‑selected ring colours</li>
+                <li>Neutral base layout</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Garmin IQ Settings</h3>
+            <ul>
+                <li>Choose ring metrics</li>
+                <li>Set ring colours</li>
+                <li>Custom goal overrides</li>
+                 <li>12‑hour / 24‑hour</li>
+            </ul>
+        </div>
+    </div>
+
+
     <!-- HERO BANNER -->
     <img class="hero-image" src="images/HERO_garmin_iq_banner_progressHalo.png" alt="FiveTone Hero Banner">
 
     <!-- THUMBNAILS -->
     <div class="thumbnail-row">
-        <img src="images/shot1-progress-fr165.jpg" alt="Progress Halo fr 165">
-        <img src="images/shot2-progress-fen8.jpg" alt="Progress Halo Fenix 8">
-        <img src="images/shot3-progress-fr965.jpg" alt="Progress Halo fr 965">
-        <img src="images/shot4-progress-step-dist-vo2-descentMk3.jpg" alt="Progress Halo Descent Mk3">
-        <img src="images/shot5-progress-live-mywatch_update1.jpg" alt="Progress Halo fr 165">
-        <img src="images/shot6-progress-live-fr165.jpeg" alt="Progress Halo fr 165">
+        <img src="images/shot1-progress-fr165.jpg" loading="lazy" alt="Progress Halo fr 165">
+        <img src="images/shot2-progress-fen8.jpg" loading="lazy" alt="Progress Halo Fenix 8">
+        <img src="images/shot3-progress-fr965.jpg" loading="lazy" alt="Progress Halo fr 965">
+        <img src="images/shot4-progress-step-dist-vo2-descentMk3.jpg" loading="lazy" alt="Progress Halo Descent Mk3">
+        <img src="images/shot5-progress-live-mywatch_update1.jpg" loading="lazy" alt="Progress Halo fr 165">
+        <img src="images/shot6-progress-live-fr165.jpeg" loading="lazy" alt="Progress Halo fr 165">
         
     </div>
 
@@ -327,9 +806,22 @@
 </a>
 
 
+<section class="about-section">
+    <h2>About the Developer</h2>
+    <p class="about-text">
+        CFC Watches is created by Colm, a Java software developer with over two decades of experience and a 
+        long‑time runner working toward a 5K personal best of 17:06. Each watch face is designed with a focus 
+        on clean geometry, high‑contrast clarity, and practical on‑device customization. The goal is simple: 
+        premium analog and digital layouts that look great on every Garmin device and make daily information 
+        easy to read at a glance.
+    </p>
+</section>
+
 <footer>
-    © 2026 CFC Watches — Designed by Colm
+    <p>© 2026 CFC Watches — Designed by Colm</p>
+    <p class="footer-sub">Premium analog and digital watch faces crafted for Garmin.</p>
 </footer>
+
 
 <script>
 
@@ -342,23 +834,25 @@ document.addEventListener("scroll", () => {
     const haloGlow = document.querySelector("#haloglow");
     const progressHalo = document.querySelector("#progressHalo");
     const flipDeck =  document.querySelector("#flipDeck");
+    const quadrantPrime = document.querySelector("#quadrantPrime");
     const ctaButtons = document.querySelectorAll(".mobile-cta");
     const dividers = document.querySelectorAll(".section-divider");
     
     const footerRect = footer.getBoundingClientRect();
     const footerVisible = footerRect.top < window.innerHeight;
 
-    const crownlineCTA = ctaButtons[0];
-    const fivetoneCTA = ctaButtons[1];
-    const haloGlowCTA = ctaButtons[2];
-    const flipDeckCTA = ctaButtons[3];
-    const progressHaloCTA = ctaButtons[4];
-
+    const quadrantPrimeCTA = ctaButtons[0];
+    const crownlineCTA = ctaButtons[1];
+    const fivetoneCTA = ctaButtons[2];
+    const haloGlowCTA = ctaButtons[3];
+    const flipDeckCTA = ctaButtons[4];
+    const progressHaloCTA = ctaButtons[5];
     const crownRect = crownline.getBoundingClientRect();
     const fiveRect = fivetone.getBoundingClientRect();
     const haloGlowRect = haloGlow.getBoundingClientRect();
     const flipDeckRect = flipDeck.getBoundingClientRect();
     const progressHaloRect = progressHalo.getBoundingClientRect();
+    const quadrantPrimeRect = quadrantPrime.getBoundingClientRect();
 
     // Show Crownline CTA when its section is in view
     if (crownRect.top < window.innerHeight && crownRect.bottom > 0) {
@@ -367,6 +861,7 @@ document.addEventListener("scroll", () => {
         haloGlowCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "none";
     }
     // Show FiveTone CTA when its section is in view
     else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
@@ -375,6 +870,7 @@ document.addEventListener("scroll", () => {
         haloGlowCTA.style.display = "none";
         fivetoneCTA.style.display = "block";
         flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "none";
     }
     // Show halo CTA when its section is in view
     else if (haloGlowRect.top < window.innerHeight && haloGlowRect.bottom > 0) {
@@ -383,6 +879,7 @@ document.addEventListener("scroll", () => {
         progressHaloCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
         haloGlowCTA.style.display = "block";
+        quadrantPrimeCTA.style.display = "none";
     }
     else if (flipDeckRect.top < window.innerHeight && flipDeckRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -390,13 +887,23 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "block";
         haloGlowCTA.style.display = "none";
         progressHaloCTA.style.display = "none";
-    }    
+        quadrantPrimeCTA.style.display = "none";
+    }
     else if (progressHaloRect.top < window.innerHeight && progressHaloRect.bottom > 0) {
         crownlineCTA.style.display = "none";
         fivetoneCTA.style.display = "none";
         progressHaloCTA.style.display = "block";
         haloGlowCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "none";
+    }
+    else if (quadrantPrimeRect.top < window.innerHeight && quadrantPrimeRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "block";
     }
     // Hide both if neither section is visible
     else {
@@ -405,6 +912,7 @@ document.addEventListener("scroll", () => {
         progressHaloCTA.style.display = "none";
         haloGlowCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "none";
     }
 
     dividers.forEach(div => {
