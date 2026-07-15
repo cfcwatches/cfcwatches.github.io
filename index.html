@@ -358,6 +358,7 @@
 
 <header>
     <nav class="top-nav">
+        <a href="#sunpath">Sunpath</a>
         <a href="#quadrantPrime">TimeFusion</a>
         <a href="#crownline">Crownline</a>
         <a href="#fivetone">FiveTone</a>
@@ -371,6 +372,89 @@
     <h1>CFC Watches</h1>
     <p class="subtitle">Precision Geometry. Premium Design. Built for Garmin®</p>
 </header>
+
+<section class="watch-section" id="sunpath">
+    <h2>Sunpath</h2>
+
+    <span class="badge-new">New Release</span>
+
+    <p class="watch-summary">
+        Sunpath is a clean, atmospheric watch face built around a dynamic daylight arc that traces the sun’s journey from sunrise to sunset. 
+        The arc updates in real time, showing daylight progress with sunrise and sunset positioned at each end for quick reference. 
+        As the day transitions into evening, the sun icon changes into a full moon, creating a natural visual cue for sunset and nightfall. 
+        Centered digital time ensures clear readability, complemented by a steps progress bar and three customizable circular stat fields. 
+        Sunpath includes ten visual themes, each crafted to harmonize with the daylight arc, moon transition, and overall layout.
+    </p>
+
+    <!-- HERO BANNER (wrapper prevents cropping) -->
+    <div class="hero-wrapper">
+        <img class="hero-image" src="images/su/HERO.jpg" alt="Sunpath Hero Banner">
+    </div>
+
+    <!-- FEATURE GRID -->
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Dynamic daylight arc from sunrise to sunset</li>
+                <li>Real‑time daylight progress indicator</li>
+                <li>Sun icon transitions to moon after sunset</li>
+                <li>Sunrise and sunset times at arc endpoints</li>
+                <li>Centered digital time</li>
+                <li>Steps progress bar</li>
+                <li>Three circular stat displays</li>
+                <li>Smooth performance on AMOLED and MIP devices</li>
+                <li>12‑hour and 24‑hour modes</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Themes</h3>
+            <ul>
+                <li>Aqua</li>
+                <li>Ember</li>
+                <li>Arctic</li>
+                <li>Solar</li>
+                <li>Nebula</li>
+                <li>Mist</li>
+                <li>Twilight</li>
+                <li>Dawn</li>
+                <li>Forest</li>
+                <li>Midnight</li>
+            </ul>
+        </div>        
+        <div>
+            <h3>On‑Device Settings</h3>
+            <ul>
+                <li>Theme selection</li>
+                <li>Choose any three stats from the full list</li>
+                <li>Show or hide the stat circles</li>
+                <li>Show or hide the date</li>
+                <li>Select date format (US or UK)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/su/SHOT1.jpg" loading="lazy" alt="Sunpath Aqua on Fenix 8">
+        <img src="images/su/SHOT2.jpg" loading="lazy" alt="Sunpath Ember on Fr265">
+        <img src="images/su/SHOT3.jpg" loading="lazy" alt="Sunpath Dawn on Fenix 8">
+        <img src="images/su/SHOT4.jpg" loading="lazy" alt="Sunpath Midnight on Fr 965">
+        <img src="images/su/SHOT5.jpg" loading="lazy" alt="Sunpath Forest on fr570">
+        <img src="images/su/SHOT6.png" loading="lazy" alt="Sunpath live my fr165">
+    </div>
+
+    <a class="btn" href="https://apps.garmin.com/apps/8c82942c-d574-4a74-a867-849a497fc149">
+        View Sunpath on Connect IQ
+    </a>
+</section>
+<a class="mobile-cta" href="https://apps.garmin.com/apps/8c82942c-d574-4a74-a867-849a497fc149">
+    View Sunpath on Connect IQ
+</a>
+
+
+
+<div class="section-divider"></div>
  
 <section class="watch-section" id="quadrantPrime">
     <h2>TimeFusion</h2>
@@ -831,24 +915,27 @@ document.addEventListener("scroll", () => {
     const progressHalo = document.querySelector("#progressHalo");
     const flipDeck =  document.querySelector("#flipDeck");
     const quadrantPrime = document.querySelector("#quadrantPrime");
+    const sunpath = document.querySelector("#sunpath");
     const ctaButtons = document.querySelectorAll(".mobile-cta");
     const dividers = document.querySelectorAll(".section-divider");
     
     const footerRect = footer.getBoundingClientRect();
     const footerVisible = footerRect.top < window.innerHeight;
 
-    const quadrantPrimeCTA = ctaButtons[0];
-    const crownlineCTA = ctaButtons[1];
-    const fivetoneCTA = ctaButtons[2];
-    const haloGlowCTA = ctaButtons[3];
-    const flipDeckCTA = ctaButtons[4];
-    const progressHaloCTA = ctaButtons[5];
+    const sunpathCTA = ctaButtons[0];
+    const quadrantPrimeCTA = ctaButtons[1];
+    const crownlineCTA = ctaButtons[2];
+    const fivetoneCTA = ctaButtons[3];
+    const haloGlowCTA = ctaButtons[4];
+    const flipDeckCTA = ctaButtons[5];
+    const progressHaloCTA = ctaButtons[6];
     const crownRect = crownline.getBoundingClientRect();
     const fiveRect = fivetone.getBoundingClientRect();
     const haloGlowRect = haloGlow.getBoundingClientRect();
     const flipDeckRect = flipDeck.getBoundingClientRect();
     const progressHaloRect = progressHalo.getBoundingClientRect();
     const quadrantPrimeRect = quadrantPrime.getBoundingClientRect();
+    const sunpathRect = sunpath.getBoundingClientRect();
 
     // Show Crownline CTA when its section is in view
     if (crownRect.top < window.innerHeight && crownRect.bottom > 0) {
@@ -858,6 +945,7 @@ document.addEventListener("scroll", () => {
         fivetoneCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
     }
     // Show FiveTone CTA when its section is in view
     else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
@@ -867,6 +955,7 @@ document.addEventListener("scroll", () => {
         fivetoneCTA.style.display = "block";
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
     }
     // Show halo CTA when its section is in view
     else if (haloGlowRect.top < window.innerHeight && haloGlowRect.bottom > 0) {
@@ -876,6 +965,7 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "none";
         haloGlowCTA.style.display = "block";
         quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
     }
     else if (flipDeckRect.top < window.innerHeight && flipDeckRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -884,6 +974,7 @@ document.addEventListener("scroll", () => {
         haloGlowCTA.style.display = "none";
         progressHaloCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
     }
     else if (progressHaloRect.top < window.innerHeight && progressHaloRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -892,6 +983,7 @@ document.addEventListener("scroll", () => {
         haloGlowCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
     }
     else if (quadrantPrimeRect.top < window.innerHeight && quadrantPrimeRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -900,6 +992,16 @@ document.addEventListener("scroll", () => {
         haloGlowCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "block";
+        sunpathCTA.style.display = "none";
+    }
+    else if (sunpathRect.top < window.innerHeight && sunpathRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "block";
     }
     // Hide both if neither section is visible
     else {
@@ -909,6 +1011,7 @@ document.addEventListener("scroll", () => {
         haloGlowCTA.style.display = "none";
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
     }
 
     dividers.forEach(div => {
