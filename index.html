@@ -1,371 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CFC Watches – Premium Garmin Watch Faces</title>
-    <style>
-        :root {
-            --font-main: Arial, sans-serif;
-            --font-size-xl: 2.8rem;
-            --font-size-lg: 2.2rem;
-            --font-size-md: 1.2rem;
-            --font-size-sm: 1rem;
-
-            --accent: #00aaff;
-            --bg-dark: #0d0d0d;
-            --bg-card: #1a1a1a;
-            --text-light: #f2f2f2;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0d0d0d;
-            color: #f2f2f2;
-            line-height: 1.6;
-        }
-        h1 { font-size: var(--font-size-xl); }
-        .watch-section h2 { font-size: var(--font-size-lg); }
-        .subtitle { font-size: var(--font-size-md); }
-
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            border-bottom: 2px solid #00aaff; /* electric blue underline */
-        }
-
-        .header-logo {
-            width: 180px;
-            max-width: 60%;
-            margin: 0 auto 20px auto;
-            display: block;
-        }
-
-        @media (max-width: 600px) {
-            .header-logo {
-                width: 140px;
-            }
-        }
-
-        @media (max-width: 700px) {
-            body {
-                padding-bottom: 90px; /* space for floating button */
-            }
-        }
-
-        .section-divider {
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(
-                to right,
-                transparent,
-                #00aaff,
-                transparent
-            );
-            margin: 60px 0;
-            opacity: 0.8;
-            transform: scaleX(0.6);           /* start slightly smaller */
-            transform-origin: center;
-            transition: transform 0.6s ease, opacity 0.6s ease;
-        }
-        .section-divider.active {
-            transform: scaleX(1);             /* expands gently on scroll */
-            opacity: 1;
-        }
-
-        .watch-section {
-            max-width: 1100px;
-            margin: 100px auto;
-            padding: 20px 20px 40px 20px;
-            background: #111;
-            border-radius: 16px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.4);
-        }
-
-
-        .watch-summary {
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            font-size: 1.1rem;
-            opacity: 0.85;
-        }
-
-        .watch-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-        }
-
-.hero-wrapper {
-    width: 100%;
-    max-height: 360px;     /* consistent visual height */
-    overflow: hidden;      /* prevents layout jump */
-    display: flex;
-    justify-content: center;
-    background: #0d0d0d;   /* blends with site */
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;   /* shows full banner */
-    border-radius: 12px;
-    box-shadow: 0 0 40px rgba(0, 170, 255, 0.15);
-}
-
-
-
-
-
-        .thumbnail-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-            padding: 10px 0 25px 0;
-        }
-
-        .thumbnail-row img {
-            width: 100%;
-            height: 260px;          /* forces consistent height */
-            object-fit: cover;      /* crops cleanly without distortion */
-            border-radius: 10px;
-            background: #111;
-            border: 1px solid #222;
-            transition: 0.2s;
-        }
-
-        .thumbnail-row img:hover {
-            transform: scale(1.05);
-            border-color: var(--accent);
-            box-shadow: 0 0 12px rgba(0,170,255,0.4);
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin: 40px auto;
-            max-width: 900px;
-            text-align: left;
-        }
-
-        .feature-grid h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            color: var(--accent);
-        }
-
-        .feature-grid ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            opacity: 0.85;
-        }
-
-        .feature-grid li {
-            margin-bottom: 6px;
-        }
-
-
-        .screenshot-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-            padding: 10px 0 25px 0;
-        }
-
-        .screenshot-row img {
-            width: 100%;
-            border-radius: 10px;
-            background: #111;
-            border: 1px solid #222;
-        }     
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .card {
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            background: #222;
-        }
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .card h3 {
-            margin-top: 15px;
-            font-size: 1.3rem;
-        }
-
-        .badge-new {
-            display: inline-block;
-            background: var(--accent);
-            color: #000;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Floating mobile CTA button */
-        .mobile-cta {
-            position: fixed;
-            bottom: 18px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #00aaff;
-            color: #fff;
-            padding: 14px 22px;
-            border-radius: 40px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1rem;
-            box-shadow: 0 4px 14px rgba(0, 170, 255, 0.4);
-            z-index: 999;
-            display: none; /* hidden by default */
-        }
-
-        /* Only show on mobile */
-        @media (max-width: 700px) {
-            .mobile-cta {
-                display: block;
-            }
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 10px 18px;
-            background: #00aaff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            opacity: 0.75;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .footer-sub {
-            opacity: 0.6;
-            font-size: 0.85rem;
-        }
-
-
-        nav {
-            position: sticky;
-            top: 0;
-            background: #0d0d0d;
-            padding: 12px 20px;
-            border-bottom: 1px solid #222;
-            z-index: 999;
-            text-align: center;
-        }
-
-        nav a {
-            color: #f2f2f2;
-            margin: 0 12px;
-            text-decoration: none;
-            font-size: 1rem;
-            opacity: 0.8;
-            transition: 0.2s;
-        }
-
-        nav a:hover {
-            opacity: 1;
-            color: var(--accent);
-        }
-
-        .about-section {
-            max-width: 900px;
-            margin: 80px auto;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .about-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            line-height: 1.7;
-        }
-
-        .about {
-            max-width: 900px;
-            margin: 80px auto;
-            text-align: center;
-            opacity: 0.85;
-        }
-
-        .about h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .top-nav {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            background: #0d0d0d;
-            padding: 12px 20px;
-            border-bottom: 1px solid #222;
-            text-align: center;
-        }
-
-        .top-nav a {
-            color: #f2f2f2;
-            margin: 0 14px;
-            text-decoration: none;
-            font-size: 1rem;
-            opacity: 0.75;
-            transition: 0.2s ease;
-        }
-
-        .top-nav a:hover {
-            opacity: 1;
-            color: #00aaff;
-        }
-        
-    </style>
 </head>
 <body>
 
 <header>
     <nav class="top-nav">
-        <a href="#sunpath">Sunpath</a>
-        <a href="#quadrantPrime">TimeFusion</a>
-        <a href="#crownline">Crownline</a>
-        <a href="#fivetone">FiveTone</a>
-        <a href="#haloglow">Halo Glow</a>
-        <a href="#flipDeck">FlipDeck</a>
-        <a href="#progressHalo">Progress Halo</a>
+        <div class="dropdown">
+            <button class="dropbtn">Watch Faces</button>
+            <div class="dropdown-content">
+                <a href="#sunpath">Sunpath</a>
+                <a href="#quadrantPrime">TimeFusion</a>
+                <a href="#crownline">Crownline</a>
+                <a href="#fivetone">FiveTone</a>
+                <a href="#haloglow">Halo Glow</a>
+                <a href="#flipDeck">FlipDeck</a>
+                <a href="#progressHalo">Progress Halo</a>
+                <a href="#pureSimple">Pure & Simple</a>
+            </div>
+        </div>
+
+        <a href="#about">About</a>
     </nav>
+
 
     <img class="header-logo" src="images/cfc_logo.png" alt="CFC Watches Logo">
 
@@ -886,7 +547,61 @@
 </a>
 
 
-<section class="about-section">
+<div class="section-divider"></div>
+
+<section class="watch-section" id="pureSimple">
+    <h2>Pure & Simple</h2>
+
+    <span class="badge-new">Free Watch Face</span>
+
+    <p class="watch-summary">
+        Pure and Simple — A clean, minimalist watch face designed for everyday clarity.
+        Bold digital time sits front and center, with heart rate at the top and date at the bottom for 
+        quick at‑a‑glance essentials. 
+        Steps and battery flank the display on either side, each with subtle progress bars that keep you 
+        informed without clutter.
+    </p>
+
+    <!-- HERO BANNER -->
+    <div class="hero-wrapper">
+        <img class="hero-image" src="images/ps/hero.jpg" alt="Pure & Simple Hero Banner">
+    </div>
+
+    <!-- FEATURE GRID -->
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Ultra‑clean digital time</li>
+                <li>Minimalist layout with balanced spacing</li>
+                <li>Battery & Steps progress bar</li>
+                <li>Optimized battery life</li>
+                <li>Perfect for AMOLED and MIP devices</li>
+            </ul>
+        </div>
+
+        
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/ps/shot1.png" loading="lazy" alt="Pure & Simple Classic White">
+        <img src="images/ps/shot2.png" loading="lazy" alt="Pure & Simple Soft Grey">
+        <img src="images/ps/shot3.jpg" loading="lazy" alt="Pure & Simple Electric Blue">
+    </div>
+
+    <a class="btn" href="https://apps.garmin.com/apps/7a25e912-434d-4344-b293-c00410674e75">
+        View Pure & Simple on Connect IQ
+    </a>
+</section>
+
+<a class="mobile-cta" href="https://apps.garmin.com/apps/7a25e912-434d-4344-b293-c00410674e75">
+    View Pure & Simple on Connect IQ
+</a>
+
+
+
+<section class="about-section" id="about">
     <h2>About the Developer</h2>
     <p class="about-text">
         CFC Watches is created by Colm, a Java software developer with over two decades of experience and a 
@@ -900,10 +615,19 @@
 <footer>
     <p>© 2026 CFC Watches — Designed by Colm</p>
     <p class="footer-sub">Premium analog and digital watch faces crafted for Garmin.</p>
+    <p class="about-text" style="margin-top: 25px;">
+        If you enjoy these watch faces and want to support future development,
+        you can <a href="https://buymeacoffee.com/cfcwatches" class="support-link">buy me a coffee</a>.
+    </p>
+
 </footer>
 
 
 <script>
+
+document.querySelector('.dropbtn').addEventListener('click', function() {
+    this.parentElement.classList.toggle('open');
+});
 
 const footer = document.querySelector("footer");
 const ctas = document.querySelectorAll(".mobile-cta");
@@ -916,6 +640,7 @@ document.addEventListener("scroll", () => {
     const flipDeck =  document.querySelector("#flipDeck");
     const quadrantPrime = document.querySelector("#quadrantPrime");
     const sunpath = document.querySelector("#sunpath");
+    const pureSimple = document.querySelector("#pureSimple");
     const ctaButtons = document.querySelectorAll(".mobile-cta");
     const dividers = document.querySelectorAll(".section-divider");
     
@@ -929,6 +654,7 @@ document.addEventListener("scroll", () => {
     const haloGlowCTA = ctaButtons[4];
     const flipDeckCTA = ctaButtons[5];
     const progressHaloCTA = ctaButtons[6];
+    const pureSimpleCTA = ctaButtons[7];
     const crownRect = crownline.getBoundingClientRect();
     const fiveRect = fivetone.getBoundingClientRect();
     const haloGlowRect = haloGlow.getBoundingClientRect();
@@ -936,6 +662,7 @@ document.addEventListener("scroll", () => {
     const progressHaloRect = progressHalo.getBoundingClientRect();
     const quadrantPrimeRect = quadrantPrime.getBoundingClientRect();
     const sunpathRect = sunpath.getBoundingClientRect();
+    const pureSimpleRect = pureSimple.getBoundingClientRect();
 
     // Show Crownline CTA when its section is in view
     if (crownRect.top < window.innerHeight && crownRect.bottom > 0) {
@@ -946,6 +673,7 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
     }
     // Show FiveTone CTA when its section is in view
     else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
@@ -956,6 +684,7 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
     }
     // Show halo CTA when its section is in view
     else if (haloGlowRect.top < window.innerHeight && haloGlowRect.bottom > 0) {
@@ -966,6 +695,7 @@ document.addEventListener("scroll", () => {
         haloGlowCTA.style.display = "block";
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
     }
     else if (flipDeckRect.top < window.innerHeight && flipDeckRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -975,6 +705,7 @@ document.addEventListener("scroll", () => {
         progressHaloCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
     }
     else if (progressHaloRect.top < window.innerHeight && progressHaloRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -984,6 +715,7 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
     }
     else if (quadrantPrimeRect.top < window.innerHeight && quadrantPrimeRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -993,6 +725,7 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "block";
         sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
     }
     else if (sunpathRect.top < window.innerHeight && sunpathRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -1002,6 +735,17 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "block";
+        pureSimpleCTA.style.display = "none";
+    }
+    else if (pureSimpleRect.top < window.innerHeight && pureSimpleRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "block";
     }
     // Hide both if neither section is visible
     else {
@@ -1012,6 +756,7 @@ document.addEventListener("scroll", () => {
         flipDeckCTA.style.display = "none";
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
     }
 
     dividers.forEach(div => {
