@@ -13,6 +13,7 @@
         <div class="dropdown">
             <button class="dropbtn">Watch Faces</button>
             <div class="dropdown-content">
+                <a href="#redline">RedLine</a>
                 <a href="#sunpath">Sunpath</a>
                 <a href="#quadrantPrime">TimeFusion</a>
                 <a href="#crownline">Crownline</a>
@@ -33,6 +34,68 @@
     <h1>CFC Watches</h1>
     <p class="subtitle">Precision Geometry. Premium Design. Built for Garmin®</p>
 </header>
+
+<section class="watch-section" id="redline">
+    <h2>RedLine</h2>
+
+    <span class="badge-new">New Release</span>
+
+    <p class="watch-summary">
+        Redline is a Performance Tachometer Watch Face, a premium AMOLED‑optimized watch face built around a clean motorsport‑inspired tachometer design. 
+        Custom bitmap time glyphs provide crisp, high‑contrast readability across all supported devices, while the sweeping heart‑rate 
+        rev gauge delivers dynamic color transitions and zone‑based status indicators. 
+        Choose from five striking themes Circuit Green, Carbon Blue, Ignition Orange, Voltage Purple, or Titanium Silver to match your gear.
+    </p>
+
+    <!-- HERO BANNER (wrapper prevents cropping) -->
+    <div class="hero-wrapper">
+        <img class="hero-image" src="images/rl/HERO.png" alt="RedLine Hero Banner">
+    </div>
+
+    <!-- FEATURE GRID -->
+    <div class="feature-grid">
+        <div>
+            <h3>Features</h3>
+            <ul>
+                <li>Dynamic Rev Gauge - Track your heart rate with a sweeping, zone-based gauge that transitions colors as you push your limits.</li>
+                <li>Crisp Readability - Custom bitmap time glyphs ensure your stats are sharp and legible, even at high speeds.</li>
+                <li>Engineered Style - Choose from five striking themes - Circuit Green, Carbon Blue, Ignition Orange, Voltage Purple, or Titanium Silver, to match your gear.</li>
+                <li>Fully Configurable - Three versatile stat fields let you monitor everything from VO2 Max and Recovery Time to Body Battery and Stress.</li>
+            </ul>
+        </div>
+        <div>
+            <h3>On‑Device Settings</h3>
+            <ul>
+                <li>Theme selection</li>
+                <li>Choose any three stats from the full list</li>
+                <li>Show or hide the stat fields</li>
+                <li>Show or hide sunrise/sunset</li>                
+            </ul>
+        </div>
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-row">
+        <img src="images/rl/SHOT1.jpg" loading="lazy" alt="RedLine fr265">
+        <img src="images/rl/SHOT2.jpg" loading="lazy" alt="RedLine fenix 8">
+        <img src="images/rl/SHOT3.png" loading="lazy" alt="RedLine on Marq">
+        <img src="images/rl/SHOT4.jpg" loading="lazy" alt="Redline on Fr 570">
+        <img src="images/rl/SHOT5.jpg" loading="lazy" alt="On-device Customization">
+        <img src="images/rl/SHOT6.jpeg" loading="lazy" alt="My fr165">
+    </div>
+
+    <a class="btn" href="https://apps.garmin.com/en-US/apps/af29f958-dfd6-46b1-9831-fd0a43ed0aad">
+        View RedLine on Connect IQ
+    </a>
+</section>
+<a class="mobile-cta" href="https://apps.garmin.com/en-US/apps/af29f958-dfd6-46b1-9831-fd0a43ed0aad">
+    View RedLine on Connect IQ
+</a>
+
+
+
+<div class="section-divider"></div>
+
 
 <section class="watch-section" id="sunpath">
     <h2>Sunpath</h2>
@@ -641,20 +704,23 @@ document.addEventListener("scroll", () => {
     const quadrantPrime = document.querySelector("#quadrantPrime");
     const sunpath = document.querySelector("#sunpath");
     const pureSimple = document.querySelector("#pureSimple");
+    const redLine = document.querySelector("#redline");
+
     const ctaButtons = document.querySelectorAll(".mobile-cta");
     const dividers = document.querySelectorAll(".section-divider");
     
     const footerRect = footer.getBoundingClientRect();
     const footerVisible = footerRect.top < window.innerHeight;
 
-    const sunpathCTA = ctaButtons[0];
-    const quadrantPrimeCTA = ctaButtons[1];
-    const crownlineCTA = ctaButtons[2];
-    const fivetoneCTA = ctaButtons[3];
-    const haloGlowCTA = ctaButtons[4];
-    const flipDeckCTA = ctaButtons[5];
-    const progressHaloCTA = ctaButtons[6];
-    const pureSimpleCTA = ctaButtons[7];
+    const redlineCTA = ctaButtons[0];
+    const sunpathCTA = ctaButtons[1];
+    const quadrantPrimeCTA = ctaButtons[2];
+    const crownlineCTA = ctaButtons[3];
+    const fivetoneCTA = ctaButtons[4];
+    const haloGlowCTA = ctaButtons[5];
+    const flipDeckCTA = ctaButtons[6];
+    const progressHaloCTA = ctaButtons[7];
+    const pureSimpleCTA = ctaButtons[8];
     const crownRect = crownline.getBoundingClientRect();
     const fiveRect = fivetone.getBoundingClientRect();
     const haloGlowRect = haloGlow.getBoundingClientRect();
@@ -663,6 +729,7 @@ document.addEventListener("scroll", () => {
     const quadrantPrimeRect = quadrantPrime.getBoundingClientRect();
     const sunpathRect = sunpath.getBoundingClientRect();
     const pureSimpleRect = pureSimple.getBoundingClientRect();
+    const redlineRect = redLine.getBoundingClientRect();
 
     // Show Crownline CTA when its section is in view
     if (crownRect.top < window.innerHeight && crownRect.bottom > 0) {
@@ -674,6 +741,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
     // Show FiveTone CTA when its section is in view
     else if (fiveRect.top < window.innerHeight && fiveRect.bottom > 0) {
@@ -685,6 +753,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
     // Show halo CTA when its section is in view
     else if (haloGlowRect.top < window.innerHeight && haloGlowRect.bottom > 0) {
@@ -696,6 +765,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
     else if (flipDeckRect.top < window.innerHeight && flipDeckRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -706,6 +776,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
     else if (progressHaloRect.top < window.innerHeight && progressHaloRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -716,6 +787,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
     else if (quadrantPrimeRect.top < window.innerHeight && quadrantPrimeRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -726,6 +798,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "block";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
     else if (sunpathRect.top < window.innerHeight && sunpathRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -736,6 +809,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "block";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
     else if (pureSimpleRect.top < window.innerHeight && pureSimpleRect.bottom > 0) {
         crownlineCTA.style.display = "none";
@@ -746,7 +820,19 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "block";
+        redlineCTA.style.display = "none";
     }
+    else if (redlineRect.top < window.innerHeight && redlineRect.bottom > 0) {
+        crownlineCTA.style.display = "none";
+        fivetoneCTA.style.display = "none";
+        progressHaloCTA.style.display = "none";
+        haloGlowCTA.style.display = "none";
+        flipDeckCTA.style.display = "none";
+        quadrantPrimeCTA.style.display = "none";
+        sunpathCTA.style.display = "none";
+        pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "block";
+    }    
     // Hide both if neither section is visible
     else {
         crownlineCTA.style.display = "none";
@@ -757,6 +843,7 @@ document.addEventListener("scroll", () => {
         quadrantPrimeCTA.style.display = "none";
         sunpathCTA.style.display = "none";
         pureSimpleCTA.style.display = "none";
+        redlineCTA.style.display = "none";
     }
 
     dividers.forEach(div => {
