@@ -58,7 +58,7 @@ Each watch face is crafted with precision geometry, premium visual design, and a
 
 Your GitHub Pages site is available at:
 
-**https://cmullan123.github.io/**  
+**https://cfcwatches.github.io/**  
 
 ---
 
