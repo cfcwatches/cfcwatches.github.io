@@ -380,6 +380,12 @@ footer{
     white-space:nowrap;
   }
 }
+.coffee-link .short{ display:none; }
+
+@media (max-width:860px){
+  .coffee-link .full{ display:none; }
+  .coffee-link .short{ display:inline; }
+}
 </style>
 </head>
 <body>
@@ -394,7 +400,10 @@ footer{
       <a href="#catalog">Catalog</a>
       <a href="#about">About</a>
     </nav>
-    <a class="nav-cta" href="https://buymeacoffee.com/cfcwatches">Buy me a coffee</a>
+    <a href="https://buymeacoffee.com/cfcwatches" class="coffee-link">
+      <span class="full">Buy me a coffee</span>
+      <span class="short">☕ Coffee</span>
+    </a>
   </div>
 </header>
 
