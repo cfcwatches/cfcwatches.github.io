@@ -8,13 +8,14 @@
 <meta name="description" content="CFC Watches creates premium Garmin watch faces. Precision Geometry. Premium Design. Built for Garmin.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CFC Watches – Premium Garmin Watch Faces">
-<meta property="og:description" content="Precision Geometry. Premium Design. Built for Garmin. Eleven premium watch faces including RedLine, Sunpath, TimeFusion, and Housemark Automatic.">
-<meta property="og:image" content="https://cfcwatches.github.io/images/rl/HERO.png">
+<meta property="og:description" content="Precision Geometry. Premium Design. Built for Garmin. Twelve premium watch faces including LumePilot, Surge Time, RedLine, Sunpath, TimeFusion, and Housemark Automatic.">
+<meta property="og:image" content="https://cfcwatches.github.io/images/lp/SHARE.jpg">
+<meta property="og:image:alt" content="LumePilot pilot-style Garmin watch face in two colour themes">
+<meta name="twitter:image" content="https://cfcwatches.github.io/images/lp/SHARE.jpg">
 <meta property="og:url" content="https://cfcwatches.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CFC Watches – Premium Garmin Watch Faces">
 <meta name="twitter:description" content="Precision Geometry. Premium Design. Built for Garmin.">
-<meta name="twitter:image" content="https://cfcwatches.github.io/images/rl/HERO.png">
 <link rel="icon" href="images/cfc_logo2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -264,7 +265,7 @@ header{
 }
 
 /* ---- detail sections ---- */
-.detail{padding:64px 0;}
+.detail{padding:64px 0;scroll-margin-top:130px;}
 .detail-top{
   display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:36px;
 }
@@ -352,6 +353,21 @@ footer{
 .footer-links a{font-size:13px;color:var(--text-dim);}
 .footer-links a:hover{color:var(--red);}
 
+.support{padding:64px 0;scroll-margin-top:130px;}
+.support h2{font-size:30px;margin:12px 0 14px;}
+.support .lede{color:var(--text-dim);font-size:15.5px;line-height:1.75;max-width:640px;margin-bottom:24px;}
+.faq{margin-top:36px;border-top:1px solid var(--line-soft);}
+.faq details{border-bottom:1px solid var(--line-soft);padding:16px 0;}
+.faq summary{
+  cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--red);font-family:'IBM Plex Mono',monospace;font-size:18px;}
+.faq details[open] summary::after{content:"\2013";}
+.faq p{color:var(--text-dim);font-size:14.5px;line-height:1.7;margin-top:10px;max-width:720px;}
+
 @media (max-width:860px){
   .nav-links{
     display:flex;
@@ -386,7 +402,336 @@ footer{
   .coffee-link .full{ display:none; }
   .coffee-link .short{ display:inline; }
 }
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{transition:none !important;animation:none !important;}
+}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "CFC Watches Garmin watch faces",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "LumePilot",
+        "description": "Pilot-inspired analogue watch face with luminous wedge markers, lance-style hands, seven colour themes and three configurable data fields.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/lp/COVER.png",
+        "url": "https://cfcwatches.github.io/#lumePilot",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Surge Time",
+        "description": "Bold digital-clock style watch face with four customizable stat arcs, a weekday bar and five colour themes.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/st/COVER.jpg",
+        "url": "https://cfcwatches.github.io/#surgeTime",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/e2a4f594-e9ef-4f72-945f-f7b2fe8ec967"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Minimalist Analog XII",
+        "description": "Modern-classic analog face with Roman or Arabic numerals, six themes and an Ultra Clean Mode.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/am/COVER.jpg",
+        "url": "https://cfcwatches.github.io/#minimalAnalog",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/60d19625-ab1d-4be3-8d35-7cd2b15552ab"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Housemark Automatic",
+        "description": "Chronograph-style face with customizable sub-dials, a personal brand label and three themes.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/ha/COVER.jpg",
+        "url": "https://cfcwatches.github.io/#housemark",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/7798d315-ac59-465f-a2a2-0e0507a8fadb"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "RedLine",
+        "description": "Performance tachometer watch face with a zone-based heart-rate rev gauge and five themes.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/rl/HERO.png",
+        "url": "https://cfcwatches.github.io/#redline",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/af29f958-dfd6-46b1-9831-fd0a43ed0aad"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Sunpath",
+        "description": "Digital face with a real-time daylight arc from sunrise to sunset and ten themes.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/su/HERO.jpg",
+        "url": "https://cfcwatches.github.io/#sunpath",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/8c82942c-d574-4a74-a867-849a497fc149"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "TimeFusion",
+        "description": "Hybrid analog and digital face with five hand styles, eight themes and a customizable stats dashboard.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/tf/HERO_TimeFusion.jpg",
+        "url": "https://cfcwatches.github.io/#quadrantPrime",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/9ac67de9-9346-4524-9f5e-54569965938c"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Crownline Analog",
+        "description": "Analog face with five bezel styles, six hand styles and customizable complications.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/HERO_garmin_iq_banner_crownline.png",
+        "url": "https://cfcwatches.github.io/#crownline",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/6a2b9e3f-3c63-4b6c-aac0-d458a5e8e3f6"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "FiveTone",
+        "description": "High-visibility digital face with a large time display and five bold colour themes.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/HERO_garmin_iq_banner_fivetone.png",
+        "url": "https://cfcwatches.github.io/#fivetone",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/c2fc25b2-d73c-4e07-ad2f-94479b7c2649"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Halo Glow",
+        "description": "Bold digital face with a bright central glow, ten themes and eight data fields.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/hero_halo_glow_hero_final_compressed.jpg",
+        "url": "https://cfcwatches.github.io/#haloglow",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/bf36b620-223d-4b27-ab3f-6d4fa3519d92"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "FlipDeck",
+        "description": "Flip-clock style digital face with ten themes and an optional personal message.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/flipdeck_hero_refined_final.png",
+        "url": "https://cfcwatches.github.io/#flipDeck",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/464f6294-d4a2-4569-a95f-28a1351c6851"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Progress Halo",
+        "description": "Digital face built around three customizable progress rings.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/HERO_garmin_iq_banner_progressHalo.png",
+        "url": "https://cfcwatches.github.io/#progressHalo",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/04092986-c4d1-4653-94a1-fd509565ddb6"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Pure & Simple",
+        "description": "Free minimalist digital face with steps and battery progress bars.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Garmin Connect IQ",
+        "image": "https://cfcwatches.github.io/images/ps/hero.jpg",
+        "url": "https://cfcwatches.github.io/#pureSimple",
+        "author": {
+          "@type": "Organization",
+          "name": "CFC Watches"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "GBP"
+        },
+        "installUrl": "https://apps.garmin.com/apps/7a25e912-434d-4344-b293-c00410674e75"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CFC Watches",
+  "url": "https://cfcwatches.github.io/",
+  "logo": "https://cfcwatches.github.io/images/cfc_logo2.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "cfcwatches@gmail.com"
+  }
+}
+</script>
+
 </head>
 <body>
 
@@ -399,6 +744,7 @@ footer{
     <nav class="nav-links">
       <a href="#catalog">Catalog</a>
       <a href="#about">About</a>
+      <a href="#support">Support</a>
     </nav>
     <a href="https://buymeacoffee.com/cfcwatches" class="coffee-link">
       <span class="full">Buy me a coffee</span>
@@ -425,7 +771,7 @@ footer{
     <div class="wrap hero-inner">
       <span class="eyebrow">Connect IQ · Garmin watch faces</span>
       <h1>Precision geometry.<br>Premium design.</h1>
-      <p class="lede">Eleven watch faces built for Garmin, from motorsport tachometers to daylight arcs to hand-finished automatic dials. Clean layouts, on-device customization, and dial‑level detail in every release.</p>
+      <p class="lede">Twelve watch faces built for Garmin, from motorsport tachometers to daylight arcs to hand-finished automatic dials, pilot-style luminous faces and bold digital performance displays. Clean layouts, on-device customization, and dial‑level detail in every release.</p>
       <div class="hero-actions">
         <a href="#catalog" class="btn btn-primary">Browse the collection</a>
         <a href="#pureSimple" class="btn btn-ghost">Try Pure &amp; Simple — free</a>
@@ -449,14 +795,38 @@ footer{
     <div class="wrap">
       <div class="catalog-head">
         <h2>The collection</h2>
-        <span class="catalog-count mono" id="catalog-count">11 watch faces</span>
+        <span class="catalog-count mono" id="catalog-count">13 watch faces</span>
       </div>
       <div class="grid" id="grid">
+<!--
+        <a href="#lumePilot" class="card" data-tags="new analog">
+          <div class="card-media">
+            <span class="card-badge">New</span>
+            <img src="images/lp/COVER.png" loading="lazy" decoding="async" alt="LumePilot pilot-style analogue watch face">
+            <span class="card-price">£1.99</span>
+          </div>
+          <div class="card-body">
+            <h3>LumePilot</h3>
+            <p class="card-tags">Pilot analogue · 7 themes · AOD option</p>
+          </div>
+        </a>
+-->
+        <a href="#surgeTime" class="card" data-tags="new digital">
+          <div class="card-media">
+            <span class="card-badge">New</span>
+            <img src="images/st/COVER.jpg" loading="lazy" decoding="async" alt="Surge Time bold digital performance watch face">
+            <span class="card-price">£1.99</span>
+          </div>
+          <div class="card-body">
+            <h3>Surge Time</h3>
+            <p class="card-tags">Digital · 4 stat arcs · 5 themes</p>
+          </div>
+        </a>
 
         <a href="#minimalAnalog" class="card" data-tags="new analog">
           <div class="card-media">
             <span class="card-badge">New</span>
-            <img src="images/am/COVER.jpg" alt="Minimalist Analog XII watch face">
+            <img src="images/am/COVER.jpg" loading="lazy" decoding="async" alt="Minimalist Analog XII watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -468,7 +838,7 @@ footer{
         <a href="#housemark" class="card" data-tags="new analog hybrid">
           <div class="card-media">
             <span class="card-badge">New</span>
-            <img src="images/ha/COVER.jpg" alt="Housemark Automatic watch face">
+            <img src="images/ha/COVER.jpg" loading="lazy" decoding="async" alt="Housemark Automatic watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -477,10 +847,9 @@ footer{
           </div>
         </a>
 
-        <a href="#redline" class="card" data-tags="new digital">
+        <a href="#redline" class="card" data-tags="digital">
           <div class="card-media">
-            <span class="card-badge">New</span>
-            <img src="images/rl/HERO.png" alt="RedLine tachometer watch face">
+            <img src="images/rl/HERO.png" loading="lazy" decoding="async" alt="RedLine tachometer watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -489,9 +858,9 @@ footer{
           </div>
         </a>
 
-        <a href="#sunpath" class="card" data-tags="new digital">
+        <a href="#sunpath" class="card" data-tags="digital">
           <div class="card-media">
-            <img src="images/su/HERO.jpg" alt="Sunpath daylight arc watch face">
+            <img src="images/su/HERO.jpg" loading="lazy" decoding="async" alt="Sunpath daylight arc watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -500,9 +869,9 @@ footer{
           </div>
         </a>
 
-        <a href="#quadrantPrime" class="card" data-tags="new hybrid digital analog">
+        <a href="#quadrantPrime" class="card" data-tags="hybrid digital analog">
           <div class="card-media">
-            <img src="images/tf/HERO_TimeFusion.jpg" alt="TimeFusion hybrid watch face">
+            <img src="images/tf/HERO_TimeFusion.jpg" loading="lazy" decoding="async" alt="TimeFusion hybrid watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -513,7 +882,7 @@ footer{
 
         <a href="#crownline" class="card" data-tags="analog">
           <div class="card-media">
-            <img src="images/HERO_garmin_iq_banner_crownline.png" alt="Crownline Analog watch face">
+            <img src="images/HERO_garmin_iq_banner_crownline.png" loading="lazy" decoding="async" alt="Crownline Analog watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -524,7 +893,7 @@ footer{
 
         <a href="#fivetone" class="card" data-tags="digital">
           <div class="card-media">
-            <img src="images/HERO_garmin_iq_banner_fivetone.png" alt="FiveTone digital watch face">
+            <img src="images/HERO_garmin_iq_banner_fivetone.png" loading="lazy" decoding="async" alt="FiveTone digital watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -535,7 +904,7 @@ footer{
 
         <a href="#haloglow" class="card" data-tags="digital">
           <div class="card-media">
-            <img src="images/hero_halo_glow_hero_final_compressed.jpg" alt="Halo Glow digital watch face">
+            <img src="images/hero_halo_glow_hero_final_compressed.jpg" loading="lazy" decoding="async" alt="Halo Glow digital watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -546,7 +915,7 @@ footer{
 
         <a href="#flipDeck" class="card" data-tags="digital">
           <div class="card-media">
-            <img src="images/flipdeck_hero_refined_final.png" alt="FlipDeck flip-clock watch face">
+            <img src="images/flipdeck_hero_refined_final.png" loading="lazy" decoding="async" alt="FlipDeck flip-clock watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -557,7 +926,7 @@ footer{
 
         <a href="#progressHalo" class="card" data-tags="digital">
           <div class="card-media">
-            <img src="images/HERO_garmin_iq_banner_progressHalo.png" alt="Progress Halo watch face">
+            <img src="images/HERO_garmin_iq_banner_progressHalo.png" loading="lazy" decoding="async" alt="Progress Halo watch face">
             <span class="card-price">£1.99</span>
           </div>
           <div class="card-body">
@@ -569,7 +938,7 @@ footer{
         <a href="#pureSimple" class="card" data-tags="digital free">
           <div class="card-media">
             <span class="card-badge free">Free</span>
-            <img src="images/ps/hero.jpg" alt="Pure and Simple minimalist watch face">
+            <img src="images/ps/hero.jpg" loading="lazy" decoding="async" alt="Pure and Simple minimalist watch face">
           </div>
           <div class="card-body">
             <h3>Pure &amp; Simple</h3>
@@ -582,6 +951,122 @@ footer{
   </section>
 
   <div class="tick-rule major"></div>
+<!--
+  <section class="detail" id="lumePilot">
+    <div class="wrap">
+      <div class="detail-top">
+        <div>
+          <div class="detail-head"><span class="chip">New release</span></div>
+          <h2>LumePilot</h2>
+          <p class="lede">A pilot-inspired analogue face built around luminous wedge markers and lance-style hands on a machined, ring-textured dial. Seven colour themes, three configurable data fields, and a choice of minimal low-power or full-face standby. Customize everything on the watch or from your phone.</p>
+        </div>
+        <div class="detail-hero-img"><img src="images/lp/HERO.png" loading="lazy" decoding="async" alt="LumePilot pilot-style Garmin watch face hero banner"></div>
+      </div>
+      <div class="spec-grid">
+        <div class="spec-block">
+          <h4>Features</h4>
+          <ul class="feature-list">
+            <li>Luminous wedge hour markers with a twin-bar 12 o'clock marker</li>
+            <li>Lance-style hands with pointed lume inlays and an optional seconds hand</li>
+            <li>Three configurable data fields at 9, 12 and 6 o'clock, with more than 15 options</li>
+            <li>Day and date window, with the day name in the accent colour at the weekend</li>
+            <li>Machined ring-textured dial, switchable on or off</li>
+            <li>Customize on the watch or from your phone</li>
+            <li>Always-on display with a minimal low-power view, or keep the full face in standby (uses more battery)</li>
+            <li>Low battery warning below 15%, and steps shown as 10.3k above 9,999</li>
+          </ul>
+        </div>
+        <div class="spec-block">
+          <h4>Themes</h4>
+          <div class="theme-chips">
+            <span class="theme-chip">Teal / Coral</span><span class="theme-chip">Blue / Yellow</span>
+            <span class="theme-chip">Violet / Amber</span><span class="theme-chip">White / Red</span>
+            <span class="theme-chip">Ember / Bone</span><span class="theme-chip">Rose / Silver</span>
+            <span class="theme-chip">Sandstone</span>
+          </div>
+          <h4 style="margin-top:22px;">Data fields</h4>
+          <p class="lede" style="font-size:13.5px;">Battery, Steps, Heart Rate, Temperature and weather, Pressure, UTC time, Calories, Distance, Floors, Body Battery, Active Minutes (day or week), VO2 max, Stress, Recovery time, Notifications, Sunrise and Sunset. Any field can be hidden.</p>
+          <h4 style="margin-top:22px;">Settings</h4>
+          <ul class="settings-list">
+            <li>Theme selection</li>
+            <li>Choose the three data fields</li>
+            <li>Seconds hand on or off</li>
+            <li>Textured dial on or off</li>
+            <li>Pressure unit (inHg, hPa or mmHg)</li>
+            <li>Show full face in standby</li>
+          </ul>
+        </div>
+      </div>
+      <div class="shot-strip">
+        <img src="images/lp/SHOT1.png" loading="lazy" decoding="async" alt="LumePilot Teal / Coral theme on a Fenix 9">
+        <img src="images/lp/SHOT2.png" loading="lazy" decoding="async" alt="LumePilot Rose / Silver theme on a Fenix 8">
+        <img src="images/lp/SHOT3.png" loading="lazy" decoding="async" alt="LumePilot Blue / Yellow theme on a Fr965">
+        <img src="images/lp/SHOT4.png" loading="lazy" decoding="async" alt="LumePilot Ember / Bone theme on a Fenix 9">
+        <img src="images/lp/SHOT5.png" loading="lazy" decoding="async" alt="LumePilot Sandstone and White / Red themes on a Fenix 8">
+        <img src="images/lp/SHOT6.jpg" loading="lazy" decoding="async" alt="LumePilot in full power mode and always-on display on a Garmin Fr165">
+      </div>
+      <div class="detail-cta">
+        <a class="btn btn-primary" href="https://apps.garmin.com/apps/REPLACE-WITH-LUMEPILOT-ID" target="_blank" rel="noopener noreferrer">View on Connect IQ</a>
+      </div>
+    </div>
+  </section>
+-->
+  <div class="tick-rule"></div>
+
+  <section class="detail" id="surgeTime">
+    <div class="wrap">
+      <div class="detail-top">
+        <div>
+          <div class="detail-head"><span class="chip">New release</span></div>
+          <h2>Surge Time</h2>
+          <p class="lede">A bold, blocky digital-clock style time display paired with a clean ring of activity data around the edge. Four fully customizable stat arcs, a weekday bar and the weather at 12 and 6 o'clock keep your time, stats and conditions visible at a glance, without a single tap.</p>
+        </div>
+        <div class="detail-hero-img"><img src="images/st/HERO.jpg" loading="lazy" decoding="async" alt="Surge Time bold digital Garmin watch face hero banner"></div>
+      </div>
+      <div class="spec-grid">
+        <div class="spec-block">
+          <h4>Features</h4>
+          <ul class="feature-list">
+            <li>Bold, blocky digital-clock style time display</li>
+            <li>Four fully customizable stat arcs in the corners of the display</li>
+            <li>Dashed progress rings show real-time progress toward each stat's daily goal</li>
+            <li>Weekday bar with today clearly highlighted</li>
+            <li>Temperature and rain chance at 12 and 6 o'clock</li>
+            <li>Five colour themes</li>
+            <li>Always-On Display support with a dimmed, minimal view to protect your screen</li>
+            <li>On-device settings for theme and full stat customization</li>
+          </ul>
+        </div>
+        <div class="spec-block">
+          <h4>Themes</h4>
+          <div class="theme-chips">
+            <span class="theme-chip">Orange</span><span class="theme-chip">Ice Blue</span>
+            <span class="theme-chip">Crimson Pulse</span><span class="theme-chip">Signal Green</span>
+            <span class="theme-chip">Mono Contrast</span>
+          </div>
+          <h4 style="margin-top:22px;">Stat arcs</h4>
+          <p class="lede" style="font-size:13.5px;">Steps, Heart Rate, Battery, Calories, Distance, Floors Climbed, Body Battery, Active Minutes (day or week), VO2 max, Stress and Recovery time in each of the four corners.</p>
+          <h4 style="margin-top:22px;">Settings</h4>
+          <ul class="settings-list">
+            <li>Theme selection</li>
+            <li>Choose the four stat arcs, on-device</li>
+          </ul>
+        </div>
+      </div>
+      <div class="shot-strip">
+        <img src="images/st/SHOT1.jpg" loading="lazy" decoding="async" alt="Surge Time orange theme on a Fenix 8">
+        <img src="images/st/SHOT2.jpg" loading="lazy" decoding="async" alt="Surge Time mono contrast theme on a Fenix 9">
+        <img src="images/st/SHOT3.jpg" loading="lazy" decoding="async" alt="Surge Time orange theme on a Fr965">
+        <img src="images/st/SHOT4.jpg" loading="lazy" decoding="async" alt="Surge Time signal green theme on a fr265">
+        <img src="images/st/SHOT5.jpg" loading="lazy" decoding="async" alt="Surge Time full power vs AOD display on a Fenix 9">
+      </div>
+      <div class="detail-cta">
+        <a class="btn btn-primary" href="https://apps.garmin.com/apps/e2a4f594-e9ef-4f72-945f-f7b2fe8ec967" target="_blank" rel="noopener noreferrer">View on Connect IQ</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="tick-rule"></div>
 
   <section class="detail" id="minimalAnalog">
     <div class="wrap">
@@ -591,7 +1076,7 @@ footer{
           <h2>Minimalist Analog XII</h2>
           <p class="lede">A modern-classic analog face for clean geometry, elegant styling, and a distraction-free layout. Choose Roman or Arabic numerals and matte or textured backgrounds, or switch on Ultra Clean Mode for a pure, hands-only dial inspired by luxury mechanical watches.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/am/HERO.jpg" alt="Minimalist Analog XII watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/am/HERO.jpg" loading="lazy" decoding="async" alt="Minimalist Analog XII watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -646,7 +1131,7 @@ footer{
           <h2>Housemark Automatic</h2>
           <p class="lede">A modern luxury timepiece crafted with the precision and balance of a premium mechanical watch, blending timeless chronograph heritage with contemporary digital clarity. Built for Garmin AMOLED and MIP devices.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/ha/HERO.png" alt="Housemark Automatic watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/ha/HERO.png" loading="lazy" decoding="async" alt="Housemark Automatic watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -696,7 +1181,7 @@ footer{
           <h2>RedLine</h2>
           <p class="lede">A performance tachometer watch face, built around a clean motorsport‑inspired gauge. Custom bitmap time glyphs keep things crisp and high‑contrast, while a sweeping heart‑rate rev gauge delivers zone‑based colour transitions. Five themes: Circuit Green, Carbon Blue, Ignition Orange, Voltage Purple, Titanium Silver.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/rl/HERO.png" alt="RedLine tachometer-style Garmin watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/rl/HERO.png" loading="lazy" decoding="async" alt="RedLine tachometer-style Garmin watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -742,7 +1227,7 @@ footer{
           <h2>Sunpath</h2>
           <p class="lede">A clean, atmospheric face built around a daylight arc that traces the sun's journey from sunrise to sunset in real time. The sun icon becomes a full moon as evening falls. Centered digital time, a steps bar, and three circular stats, wrapped in ten daylight‑matched themes.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/su/HERO.jpg" alt="Sunpath sunrise to sunset watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/su/HERO.jpg" loading="lazy" decoding="async" alt="Sunpath sunrise to sunset watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -794,7 +1279,7 @@ footer{
           <h2>TimeFusion</h2>
           <p class="lede">A modern hybrid face blending a clean digital layout, sunrise/sunset awareness, and a customizable stats dashboard, with a unified lower display and custom icons for balanced information at a glance.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/tf/HERO_TimeFusion.jpg" alt="TimeFusion hybrid analog digital watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/tf/HERO_TimeFusion.jpg" loading="lazy" decoding="async" alt="TimeFusion hybrid analog digital watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -844,7 +1329,7 @@ footer{
           <h2>Crownline Analog</h2>
           <p class="lede">A modern analog face built around precision geometry, handcrafted numerals, multiple bezel styles and premium hand options — clean aesthetics with practical complications, rendered crisply across every supported device.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/HERO_garmin_iq_banner_crownline.png" alt="Crownline Analog watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/HERO_garmin_iq_banner_crownline.png" loading="lazy" decoding="async" alt="Crownline Analog watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -890,7 +1375,7 @@ footer{
           <h2>FiveTone</h2>
           <p class="lede">A clean digital face built around a large, high‑visibility time display and five bold colour themes. Time and date sit left‑aligned, with configurable daily metrics on the right for a quick glance.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/HERO_garmin_iq_banner_fivetone.png" alt="FiveTone digital watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/HERO_garmin_iq_banner_fivetone.png" loading="lazy" decoding="async" alt="FiveTone digital watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -939,7 +1424,7 @@ footer{
           <h2>Halo Glow</h2>
           <p class="lede">A bold digital face with a bright central glow, clean layout, and ten vibrant colour themes. Eight configurable data slots and full on‑device customization pair high‑impact visuals with practical daily metrics.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/hero_halo_glow_hero_final_compressed.jpg" alt="Halo Glow digital watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/hero_halo_glow_hero_final_compressed.jpg" loading="lazy" decoding="async" alt="Halo Glow digital watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -988,7 +1473,7 @@ footer{
           <h2>FlipDeck</h2>
           <p class="lede">A modern flip‑clock face built around bold digital cards and clean geometry, blending classic flip‑clock styling with contemporary clarity — multiple themes, plus an optional personal message above the cards.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/flipdeck_hero_refined_final.png" alt="FlipDeck flip-clock watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/flipdeck_hero_refined_final.png" loading="lazy" decoding="async" alt="FlipDeck flip-clock watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -1038,7 +1523,7 @@ footer{
           <h2>Progress Halo</h2>
           <p class="lede">A modern digital face built around three customizable progress rings, giving you a clear snapshot of daily activity at a glance — full ring colour control and custom goal overrides, paired with weather, battery and heart rate.</p>
         </div>
-        <div class="detail-hero-img"><img src="images/HERO_garmin_iq_banner_progressHalo.png" alt="Progress Halo triple progress ring watch face hero banner"></div>
+        <div class="detail-hero-img"><img src="images/HERO_garmin_iq_banner_progressHalo.png" loading="lazy" decoding="async" alt="Progress Halo triple progress ring watch face hero banner"></div>
       </div>
       <div class="spec-grid">
         <div class="spec-block">
@@ -1106,6 +1591,45 @@ footer{
     </div>
   </section>
 
+<div class="tick-rule"></div>
+
+  <section class="support" id="support">
+    <div class="wrap">
+      <span class="eyebrow">Support</span>
+      <h2>Help &amp; contact</h2>
+      <p class="lede">Questions, a bug to report, or an idea for a new feature? Email me and include the watch face name and your watch model, plus a screenshot if you can. That makes it much quicker to sort out.</p>
+      <div class="detail-cta" style="border-top:0;padding-top:0;">
+        <a class="btn btn-primary" href="mailto:cfcwatches@gmail.com?subject=CFC%20Watches%20support">Email support</a>
+        <span class="mono" style="font-size:12.5px;color:var(--text-faint);">cfcwatches@gmail.com</span>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>How do I install a watch face?</summary>
+          <p>Use the “View on Connect IQ” button on the face's page above, then install it from the Connect IQ app on your phone. Sync your watch afterwards, then choose the face from your watch's face list.</p>
+        </details>
+        <details>
+          <summary>How do I change the theme or the data fields?</summary>
+          <p>Open the face's settings in the Connect IQ app on your phone. Many of my faces can also be customized directly on the watch. Each face's page above says which settings it has.</p>
+        </details>
+        <details>
+          <summary>Why do the weather or sunrise and sunset values show “--”?</summary>
+          <p>Those values use the weather data on your watch, which comes from your phone. Check that the watch is paired and has synced recently. A few data fields also depend on your watch model supporting that sensor or metric.</p>
+        </details>
+        <details>
+          <summary>What does the always-on display option do?</summary>
+          <p>On AMOLED watches, the face shows a dimmed, minimal view while the screen sleeps. This protects the screen and saves battery. Some faces, such as LumePilot, let you keep the full face on in standby instead, which uses more battery.</p>
+        </details>
+        <details>
+          <summary>Will a face work on my watch?</summary>
+          <p>Each face lists its compatible watches on its Connect IQ page. If your model isn't listed, or something looks wrong on your screen size, email me with the model and a screenshot.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+
   <div class="tick-rule major"></div>
 
   <section class="about" id="about">
@@ -1130,6 +1654,8 @@ footer{
       <a href="#catalog">Catalog</a>
       <a href="#about">About</a>
       <a href="https://buymeacoffee.com/cfcwatches">Buy me a coffee</a>
+      <a href="#support">Support</a>
+      <a href="mailto:cfcwatches@gmail.com">Email</a>
     </div>
   </div>
 </footer>
@@ -1153,7 +1679,8 @@ footer{
         if(match) shown++;
       });
       count.textContent = shown + (shown === 1 ? ' watch face' : ' watch faces');
-      catalogSection.scrollIntoView({behavior:'smooth', block:'start'});
+      var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      catalogSection.scrollIntoView({behavior: smooth ? 'smooth' : 'auto', block:'start'});
     });
   });
 })();
